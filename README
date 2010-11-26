@@ -1,0 +1,34 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3342
+
+I've been working on a clone of Emacs' Org-mode and wanted to announce
+an early version of it that's available (for the adventurous) at
+Github:
+https://github.com/hsitz/VimOrganizer
+
+******************************************************************************************
+IMPORTANT:  This is not yet  a polished plugin that you can just install and use!  It's a big project in a very early state, in a constant state of major change, with lots of work left to be done.  A lot of it works, and works well, but there are plenty of bugs and it's not yet a plugin that "plays well" with other plugins.  So many people may not want to bother with it at this point.  If you have some interest but not enough to tinker at this point, check back in a month or two to see if things have changed, say around January 2011.
+************************************************************************************
+
+There are also a bunch of videos illustrating some of the
+functionality here:
+http://vimeo.com/
+
+For those who don't know what Org-mode is you can read about it at the
+Org-mode site:
+http://orgmode.org/
+
+It's hard to describe exactly what Org-mode is and what it can do.
+Some people think it's just an outliner with some task management capability.  And it is
+that.  But it can do much more, with uses mostly limited by your imagination.  E.g, it can
+be used as a high quality document authoring system that exports nicely formatted docs to LaTeX/
+PDF.  Or it can be used as a literate programming environment.  The Emacs
+Org-mode  feature set is broad and deep; I think there are few people who even
+know everything it can do, much less who use a large percentage of its features.  It's
+very usable and many people use it just as a simple and easy-to-use outliner.  But if you want to go beyond
+that the features are there to use.
+
+I've got a good start on implementing a lot of the major features and
+people who are the "early adopter" type may be interested in giving it a spin
+right now.  I'd be happy to hear feedback.
+
+-- Herb Sitz 
