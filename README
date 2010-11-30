@@ -7,11 +7,13 @@ https://github.com/hsitz/VimOrganizer
 
 ******************************************************************************************
 IMPORTANT:  This is not yet  a polished plugin that you can just install and use!  It's a big project in a very early state, in a constant state of major change, with lots of work left to be done.  A lot of it works, and works well, but there are plenty of bugs and it's not yet a plugin that "plays well" with other plugins.  So many people may not want to bother with it at this point.  If you have some interest but not enough to tinker at this point, check back in a month or two to see if things have changed, say around January 2011.
+
+Most recent version (0.12) has many changes to make installation easier and explain it better, see comments in the sample vimrc and sample colorscheme (org_dark.vim).  Thanks especially to ZyX and Marko Mahnič  for suggestions on making the plugin cooperate with other plugins in Vim's plugin scheme,  to Chelsea Dijkstra for suggestions on how to improve colorscheme for terminal users, and Stephen Sugden for suggestions on how to streamline settings in the vimrc file    
 ************************************************************************************
 
 There are also a bunch of videos illustrating some of the
 functionality here:
-http://vimeo.com/
+http://vimeo.com/user5149406/videos
 
 For those who don't know what Org-mode is you can read about it at the
 Org-mode site:
