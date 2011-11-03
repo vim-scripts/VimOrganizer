@@ -10,10 +10,16 @@
 
    ...
 
-    ,8                   show up to level 4
+    ,,3                   show up to level 3 heads for current heading only
 
-    ,9                   show up to level 9
+    ,,5                   show up to level 5 heads for current heading only
+    . . .
 ** Basic Outline Editing
+   Name your file with a '.org' extension and then just start adding 
+   headings with asterisk to indicate heading level.  NOTE:  asterisks must
+   be in the leftmost column and must be separate from heading text by a 
+   space.  This document is an example showing headings, subheadings,
+   and text underneath each.
 *** Adding new headlines
 ****   Enter, shift+Enter   
         add another headline of same level
@@ -22,13 +28,6 @@
         add another headline of lower-level
 ****   Ctrl+Shift+Enter 
         add another headline of higher-level
-*** Useful Vim commands
-    o                    insert text on next line
-
-    O                    insert y text on previous level above 
-
-    gg=G                 normal mode command to reformat line
-                        indents in entire document
 ** Time Stamps/Date-time prompt
    The following commands may be issued anywhere within a headline and will 
    enter or edit the corresponding date for the headline.  One date of 
@@ -37,16 +36,12 @@
    this editing mechanism is currently restricted to dealing with only these
    "primary" dates.
 
- enter DEADLINE date for headline
-    :,dd
- enter SCHEDULED date for headline
-    :,ds
- enter CLOSED date for headline
-    :,dc
- enter regular date (i.e., no indicator) for headline
-    :,dr
- enter timestamp into text
-    :<F9>
+ enter DEADLINE date for headline      ,dd
+ enter SCHEDULED date for headline     ,ds
+ enter CLOSED date for headline        ,dc
+ enter regular date TIMESTAMP (i.e., no indicator) for headline
+                                       ,dt
+ enter timestamp into text             ,dg
 
     The command-line prompt and calendar that appear when you enter a ,d<x>  
     command operate nearly the same as the date-time prompt in Emacs' 
@@ -60,22 +55,32 @@
 ** Set Agenda Files
    Agenda files are held in a list:  g:agenda_files.  You can enter values for 
    g:agenda_files in your vimrc, e.g.,
-   :let g:agenda_files = ['myfile.org','c:/path/myfile.org']
-   
-   There is a bare-bones agenda-editing mechanism that works like this:
+
+            :let g:agenda_files = ['myfile.org','c:/path/myfile.org']
+
+   You can also use Vimscript to assign multiple files at a time to 
+   g:agenda_files.  For example, putting the line below in your vimrc would
+   put all .org files in the org_files directory into g:agenda_files:
+
+        :let g:agenda_files = split(glob("~\desktop\org_files\*.org"),"\n")
+
+   User Interface for runtime editing of g:agenda_files:
+
+   There is a also a bare-bones agenda-editing mechanism that works like this:
    (1) Put your .org working directories in list g:agenda_dirs.  Mine is in my
    vimrc and looks like this:
 
-    :let g:agenda_dirs=["c:/users/herbert/documents/my\ dropbox","c:/users/herbert/desktop"]
+    :let g:agenda_dirs=["c:/users/herbert/documents/my\ dropbox","c:/users/herbert/desktop/org_Files"]
    
    (2) Then to edit your agenda files issue this command 
    
         :call EditAgendaFiles()
    
    This will open a new tab and show your current agenda files along with a list
-   of all org files in your agenda dirs.  Simply copy or move files from the 
-   agenda dirs list to the top and when done press :W.  Order of agenda files is
-   sometimes important, e.g., it is used when ordering some agenda results.
+   of all org files in your agenda dirs.  Simply copy or move lines from the 
+   agenda dirs list to the top and when done press :W (that's a capital 'W').  
+   Order of agenda files is sometimes important, e.g., it is used when ordering 
+   some agenda results.
    
 ** Tags
    Tags for a file are defined using the SetupTags(<tag-setup-string>) function.  There is an 
@@ -86,61 +91,23 @@
    tag, no letter is automatically assigned.  The tags set up by SetupTags() are 
    used in the menu accessed by ,et .
 
-   toggle tag view      
-   :call ToggleColumnView()
-   edit tags              
-   :,et
-   view tag in agenda   
-   :double-click tag, 
+   edit tags                        --  ,et
+   view items with tag in agenda    -- double-click tag, 
+
+   (Note: The 'RunSearch' searches below can all be entered now
+   by accessing Agenda Dashboard (,ag) and pressing 'm')
    view entries having both tag1 and tag2:
     :call RunSearch('+tag1+tag2')
    view entries having tag1  but not tag2:  
             :call RunSearch('+tag1-tag2')
    view entries having tag1 or tag2:  
-            :call RunSearch('+\(tag1\|tag2\)')
+            :call RunSearch('+tag1|tag2')
    view entries having tag1 that are also TODO:  
             :call RunSearch('+TODO+tag1')
    view entries having tag1 that are also DONE:
             :call RunSearch('+DONE+tag1')
    view entries having tag1 that have any todo:
-            :call RunSearch('+ALL_TODOS+tag1')
+            :call RunSearch('+ANY_TODO+tag1')
 
-** Sparse Tree Search
-   sparse trees can be generated in two ways right now:
-
-   Method 1:
-   :call SparseTreeRun(<regex patter string>)
-   For example:
-   sparse tree of deadlines in March 2011   :call SparseTreeRun('DEADLINE.*2011-03')
-
-    Method 2:
-    :call RunSearch(<search spec>,1)
-    This uses same type of search spec as illustrated in previous section for 
-    Tags, but feeds second argument of 1 to RunSearch() to indicate results 
-    should be in form of sparse_tree. E.g.:
-    
-   sparse tree of headlines with tag1:
-   :call SparseTreeRun('+tag1',1)
-   
-   To clear a sparse tree generated by either method you can:
-   (1) :call ClearSparseTree()
-   or (2) issue an agenda command or another RunSearch() command
-** Videos (on Vimeo)
-   [Org-mode clone for Vim[http://viimeo.com/16543959]]
-   [Sparse Tree Search in Vim clone of Org-mode[http://vimeo.com/16646716]]
-   [Overview of Tags in Org-mode clone for Vim[http://vimeo.com/16650450]]
-   [Basic Outline Editing in Vim org-clone[http://vimeo.com/16796666]]
-** Links
-   [Vim org mode clone 
-   announcement[http://permalink.gmane.org/gmane.emacs.orgmode/33226]]
-   [Vim Organizer Source[https://github.com/hsitz/VimOrganizer]]
-   [Vim Organizer Announcement[]]
-   [Emacs org-mode home[http://orgmode.org]]
-** Hints
-   [PyScratch Demo[http://vimeo.com/16871727]]
-   :set filetype     to see if filetype is org
- 
- 
-* 
  
  
