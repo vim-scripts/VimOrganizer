@@ -10,6 +10,12 @@ Windows contact me and I should be able to provide you with an
 executable.  If I hadn't been able to make Vim do this I would have 
 bitten the bullet and moved to Emacs, as much as I hate editing in Emacs.)
  
+Video showing some of the new features is here:
+http://vimeo.com/31531308 (showing colorscheme support, narrowing, links,
+                                                 general document authoring support)
+http://vimeo.com/31564708 (showing excellent export to 
+                                                  LibreOffice/MS Word format)
+
 VimOrganizer is a Vim filetype plugin that attempts to clone Emacs' Org-mode.  
 It is currently (November 2011) in an alpha-stage, both in terms of (1) the 
 breadth and depth of Org-mode features it clones and (2) the stability of its
