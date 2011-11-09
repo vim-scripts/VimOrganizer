@@ -1,6 +1,6 @@
 This is a mirror of http://www.vim.org/scripts/script.php?script_id=3342
 
-VimOrganizer version 0.30, November 2, 2011.  Requires Vim version that 
+VimOrganizer version 0.31, November 8, 2011.  Requires Vim version that 
 is compiled with support for folding and tabs.  Conceal will
 be taken advantage of if working with Vim73 supporting conceal.  
 (Also, I STRONGLY suggest that you apply a patch to Vim so that 
