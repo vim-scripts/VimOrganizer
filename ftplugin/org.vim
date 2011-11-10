@@ -3338,7 +3338,7 @@ function! s:RepeatMatch(rptdate, date1, date2)
     if basedate > date1
         let date1 = basedate
     endif
-    let baserpt = matchstr(a:rptdate, ' \S\S\S [.+ ]+\zs\S\+\ze.*>')
+    let baserpt = matchstr(a:rptdate, ' \S\S\S [.+ ]\{0,1}+\zs\S\+\ze.*>')
     let rptnum = matchstr(baserpt, '^\d\+')
     let rpttype = matchstr(baserpt, '^\d\+\zs.')
     let g:rptlist = []
