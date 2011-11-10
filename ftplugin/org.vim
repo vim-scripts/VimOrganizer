@@ -5885,7 +5885,7 @@ function! OrgDoSingleFold(line)
         " I know runaway can happen if at last heading in document,
         " not sure where else
         let runaway_count = 0
-        if (cur_end >= line("$")) || (OrgFoldLevel(cur_end+1) ==? '<0')
+        if (cur_end >= line("$")) "|| (OrgFoldLevel(cur_end+1) ==? '<0')
             return
         endif
         if getline(cur_end+1) =~ b:v.drawerMatch
