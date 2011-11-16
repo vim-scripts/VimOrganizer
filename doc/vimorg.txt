@@ -1117,12 +1117,12 @@ You can also use Vimscript to add files to g:agenda_files.  For
 example, putting something like the following lines in your vimrc would
 always fill g:agenda_files upon startup:
 
-   let g:org_agenda_files = split(glob("~/documents/org_files/*.org"),"\n")
+   let g:agenda_files = split(glob("~/documents/org_files/*.org"),"\n")
 
 HINT: use the '+=' operator if you want to append these entries to those
-already in g:org_agenda_files. E.g.,
+already in g:agenda_files. E.g.,
 
-   let g:org_agenda_files += split(glob("~/documents/org_files/*.org"),"\n")
+   let g:agenda_files += split(glob("~/documents/org_files/*.org"),"\n")
 
 ----------------------------------------------------------------------
 The Agenda Dashboard                              *vimorg-agenda-dashboard*

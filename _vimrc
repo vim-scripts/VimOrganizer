@@ -38,7 +38,7 @@ let g:org_tags_alist='{@home(h) @work(w) @tennisclub(t)} {easy(e) hard(d)} {comp
 " Below is line I use in my Windows install:
 " NOTE:  case sensitive even on windows.
 let g:org_agenda_select_dirs=["~/desktop/org_files"]
-let g:org_agenda_files = split(glob("~/desktop/org_files/org-mod*.org"),"\n")
+let g:agenda_files = split(glob("~/desktop/org_files/org-mod*.org"),"\n")
 
 " ---------------------
 " Emacs setup
